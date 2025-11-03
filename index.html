@@ -8,13 +8,13 @@
     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
 
     :root {
-      --green-light: #D7F9D4;
-      --green-mid: #A6E3A1;
-      --green-deep: #4BA84F;
-      --green-dark: #215A27;
-      --text-dark: #243424;
-      --bg-light: #F4FFF3;
-      --accent-glow: #B0FFB3;
+      --green-light: #d9fcd6;
+      --green-mid: #a8f0a2;
+      --green-deep: #41b247;
+      --green-dark: #1c5420;
+      --glow: #b8ffb8;
+      --text-dark: #233223;
+      --bg-light: #f5fff4;
     }
 
     * {
@@ -28,16 +28,15 @@
       background: linear-gradient(135deg, var(--green-light) 0%, var(--bg-light) 100%);
       color: var(--text-dark);
       line-height: 1.8;
-      overflow-x: hidden;
-      min-height: 100vh;
       padding: 30px 20px;
+      overflow-x: hidden;
     }
 
-    /* ---- 頭像與名言 ---- */
+    /* --- 頭像區域 --- */
     .profile {
       text-align: center;
       margin-bottom: 40px;
-      animation: fadeIn 2s ease forwards;
+      animation: fadeIn 1.5s ease forwards;
     }
 
     .profile img {
@@ -45,8 +44,8 @@
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 0 30px var(--green-mid);
       border: 4px solid var(--green-deep);
+      box-shadow: 0 0 20px var(--glow);
       animation: float 4s ease-in-out infinite;
     }
 
@@ -63,29 +62,68 @@
       color: var(--green-deep);
       font-weight: 600;
       margin-top: 10px;
-      text-shadow: 0 0 5px var(--accent-glow), 0 0 15px var(--green-mid);
+      text-shadow: 0 0 5px var(--glow), 0 0 10px var(--green-mid);
       animation: glow 2.5s ease-in-out infinite alternate;
     }
 
-    /* ---- 主要內容區 ---- */
+    /* --- 卡片容器 --- */
     .container {
       max-width: 900px;
       margin: 0 auto;
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(70, 150, 70, 0.1);
-      padding: 40px 50px;
-      animation: fadeInUp 1.5s ease forwards;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
 
+    /* --- AI晶片光框 --- */
+    .card {
+      position: relative;
+      background: linear-gradient(145deg, #ffffff, #f7fff6);
+      border-radius: 18px;
+      padding: 30px 40px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(60, 140, 60, 0.15);
+      transition: all 0.4s ease;
+      border: 2px solid rgba(100, 200, 100, 0.3);
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    /* AI邊角光暈 */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, #b0ffb8, #5fe45a, #c8ffc8);
+      border-radius: 20px;
+      z-index: 0;
+      opacity: 0.5;
+      filter: blur(12px);
+      animation: pulse 3s ease-in-out infinite alternate;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 14px 35px rgba(70, 170, 70, 0.25);
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease;
+    }
+
+    /* --- 內容 --- */
     h2 {
       font-size: 1.6em;
       font-weight: 800;
       color: var(--green-dark);
-      margin-top: 35px;
       margin-bottom: 15px;
       position: relative;
+      z-index: 2;
     }
 
     h2::after {
@@ -94,63 +132,57 @@
       left: 0;
       bottom: -6px;
       width: 60px;
-      height: 4px;
+      height: 3px;
       background: linear-gradient(90deg, var(--green-mid), var(--green-deep));
       border-radius: 2px;
     }
 
     p {
       font-size: 1.05em;
-      margin-bottom: 15px;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.8s ease;
-    }
-
-    .show {
-      opacity: 1;
-      transform: translateY(0);
+      margin-bottom: 12px;
+      z-index: 2;
+      position: relative;
     }
 
     .contact {
       text-align: center;
-      margin-top: 30px;
       font-size: 1em;
+      z-index: 2;
     }
 
     .contact a {
       color: var(--green-deep);
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .contact a:hover {
       text-decoration: underline;
     }
 
-    /* ---- 動畫效果 ---- */
+    /* --- 動畫區 --- */
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
     }
 
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
+      50% { transform: translateY(-10px); }
     }
 
     @keyframes glow {
-      from { text-shadow: 0 0 5px var(--accent-glow), 0 0 10px var(--green-mid); }
-      to { text-shadow: 0 0 15px var(--accent-glow), 0 0 30px var(--green-mid); }
+      from { text-shadow: 0 0 5px var(--glow), 0 0 10px var(--green-mid); }
+      to { text-shadow: 0 0 15px var(--glow), 0 0 25px var(--green-mid); }
+    }
+
+    @keyframes pulse {
+      0% {opacity: 0.3; filter: blur(8px);}
+      100% {opacity: 0.6; filter: blur(15px);}
     }
 
     @media (max-width: 768px) {
-      .container {
+      .card {
         padding: 25px;
       }
     }
@@ -160,43 +192,50 @@
   <div class="profile">
     <img src="your-photo.jpg" alt="潘雪甄 大頭照">
     <h1>潘雪甄</h1>
-    <div class="quote">每一次轉型，都是新的創業。</div>
+    <div class="quote">用學習開啟改變，用創新創造未來。</div>
+    <div class="quote" style="margin-top:5px;">每一次轉型，都是新的創業。</div>
   </div>
 
   <div class="container">
-    <h2>關於我</h2>
-    <p>
-      我是一位對學習與創新充滿熱情的人。畢業於國立台北大學金融合作與經營學系，
-    </p>
-    <p>
-      在學期間，我投入餐飲創業，從選址、行銷、營運到人員管理都親力親為。
-      這段經歷讓我學會如何從市場數據與顧客行為中找到商機。
-      而當我開始接觸 AI 技術，我發現那能讓商業決策更有預測力，也能開啟更多創新可能。
-    </p>
-    <p>
-    
-    </p>
+    <div class="card">
+      <h2>關於我</h2>
+      <p>
+        我是一位對學習與創新充滿熱情的人。畢業於國立台北大學金融合作與經營學系。
+      </p>
+      <p>
+        在學期間，我投入餐飲創業，從選址、行銷、營運到人員管理都親力親為。
+        這段經歷讓我學會從市場數據與顧客行為中找到商機，也意識到若結合 AI 技術，
+        就能更精準地預測與決策。
+      </p>
+      <p>
+        現在，我正專注於結合金融思維與 AI 技術，希望打造出能解決真實問題、
+        又具創造力的商業模式。
+      </p>
+    </div>
 
-    <h2>教育背景</h2>
-    <p>國立台北大學｜金融與合作經營學系 學士學位</p>
+    <div class="card">
+      <h2>教育背景</h2>
+      <p>國立台北大學｜金融與合作經營學系 學士學位</p>
+    </div>
 
-    <h2>經驗與技能</h2>
-    <p>• 餐飲創業經驗：品牌定位、行銷策略與營運管理</p>
-    <p>• 文書操作與資料整理</p>
+    <div class="card">
+      <h2>經驗與技能</h2>
+      <p>• 餐飲創業：品牌定位、行銷策略與營運管理</p>
+      <p>• 商業分析與資料解讀能力</p>
+    </div>
 
-    <div class="contact">
+    <div class="card contact">
       📧 聯絡方式：<a href="mailto:shiuejen.p@gmail.com">shiuejen.p@gmail.com</a>
     </div>
   </div>
 
   <script>
-    // 捲動時淡入效果
-    const elements = document.querySelectorAll('p');
+    const cards = document.querySelectorAll('.card');
     window.addEventListener('scroll', () => {
-      elements.forEach(el => {
-        const rect = el.getBoundingClientRect();
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
         if (rect.top < window.innerHeight - 100) {
-          el.classList.add('show');
+          card.classList.add('show');
         }
       });
     });
