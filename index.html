@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>潘雪甄簡歷</title>
+    <title>潘雪甄｜個人簡歷</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
 
         :root {
-            --milk-tea: #D4B896;
-            --dark-tea: #A67C52;
-            --light-tea: #F5E6D3;
-            --cream: #FBF7F0;
-            --brown-text: #5D4037;
-            --warm-white: #FEFCF8;
-            --accent-gold: #C8860D;
+            --light-green: #D4ECDD;
+            --mid-green: #A7C7A3;
+            --dark-green: #5C8D4E;
+            --cream: #F9FBF7;
+            --text-dark: #3E4E3E;
         }
 
         * {
@@ -25,178 +23,172 @@
 
         body {
             font-family: 'Nunito', 'Microsoft JhengHei', sans-serif;
-            line-height: 1.6;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--light-tea) 100%);
-            color: var(--brown-text);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 30px;
-            background: var(--warm-white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(161, 136, 127, 0.15);
-        }
-
-        .sidebar {
-            background: linear-gradient(180deg, var(--milk-tea) 0%, var(--dark-tea) 100%);
-            color: white;
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .sidebar h1 {
-            font-size: 2.2em;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .sidebar .title {
-            font-size: 1.1em;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            font-weight: 400;
-        }
-
-        .contact-info {
-            width: 100%;
-            margin-top: 30px;
-        }
-
-        .contact-info h3 {
-            font-size: 1.3em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-            padding-bottom: 10px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            font-size: 0.95em;
-        }
-
-        .contact-item::before {
-            content: "📧";
-            margin-right: 12px;
-            font-size: 1.1em;
-        }
-
-        .main-content {
-            padding: 40px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .section h2 {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: var(--dark-tea);
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 12px;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--milk-tea) 0%, var(--accent-gold) 100%);
-            border-radius: 2px;
-        }
-
-        .about p {
-            font-size: 1.1em;
+            background: linear-gradient(135deg, var(--light-green) 0%, var(--cream) 100%);
+            color: var(--text-dark);
             line-height: 1.8;
-            color: var(--brown-text);
-            background: var(--light-tea);
-            padding: 25px;
-            border-radius: 12px;
-            border-left: 4px solid var(--milk-tea);
+            padding: 40px 20px;
+            overflow-x: hidden;
         }
 
-        .education-item, .project-item {
-            background: var(--cream);
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid var(--milk-tea);
+        /* 頭像區 */
+        .profile {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        .profile img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideUp 1s ease forwards 0.3s;
+        }
+
+        .profile h1 {
+            font-size: 2.4em;
+            font-weight: 800;
+            color: var(--dark-green);
+            margin-bottom: 8px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideUp 1s ease forwards 0.6s;
+        }
+
+        .profile p {
+            font-size: 1.2em;
+            color: #4A6B45;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideUp 1s ease forwards 0.9s;
+        }
+
+        /* 主要內容 */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffffb3;
+            backdrop-filter: blur(8px);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(100, 120, 100, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideUp 1.2s ease forwards 1.2s;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: var(--dark-green);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--mid-green);
+            padding-left: 12px;
+        }
+
+        p {
+            font-size: 1.05em;
+            color: var(--text-dark);
             margin-bottom: 15px;
         }
 
-        .education-item h4, .project-item h4 {
-            font-size: 1.2em;
-            color: var(--dark-tea);
-            font-weight: 600;
-            margin-bottom: 5px;
+        .contact {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1em;
         }
 
-        .education-item p, .project-item p {
-            color: var(--brown-text);
-            font-size: 0.95em;
+        .contact a {
+            color: var(--dark-green);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* 動畫效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 滾動出現效果 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
+            body {
+                padding: 20px;
             }
-            .sidebar, .main-content {
-                padding: 30px 20px;
+            .container {
+                padding: 25px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- 左側個人資訊 -->
-        <div class="sidebar">
-            <h1>潘雪甄</h1>
-            
-            <div class="contact-info">
-                <h3>聯絡方式</h3>
-                <div class="contact-item">shiuejen.p@@gmail.com</div>
-            </div>
-        </div>
+    <div class="profile">
+        <img src="your-photo.jpg" alt="潘雪甄 大頭照">
+        <h1>潘雪甄</h1>
+        <p>用學習開啟改變，用創新創造未來。</p>
+    </div>
 
-        <!-- 右側主要內容 -->
-        <div class="main-content">
-            <!-- 關於我 -->
-            <div class="section about">
-                <h2>關於我</h2>
-                <p>
-                    我是一位對學習與創新充滿熱情的人。
-畢業於 國立台北大學金融合作與經營學系。
-在學期間，我選擇走上一條不同於一般金融人的道路——投入餐飲創業。
-從店面選址、行銷推廣、營運管理到人員培訓，我親身參與了每一個細節。這段經歷讓我深刻體會到市場競爭的真實樣貌，也學會從數據與顧客行為中尋找商機。
-隨著經驗的累積，我開始意識到，如果能結合 AI 技術，就能更精準地分析市場、預測趨勢並優化決策。於是我開始自學各種 AI 工具，嘗試將過去的實務經驗轉化為數據化的思維。
-現在的我，正積極朝向金融與人工智慧結合的領域前進，希望運用科技與數據，創造更具洞察力的商業模式。
+    <div class="container fade-in">
+        <h2>關於我</h2>
+        <p>
+            我是一位對學習與創新充滿熱情的人。<br>
+            畢業於國立台北大學金融合作與經營學系，在學期間參與「金融創新與AI專班」，啟發了我對人工智慧與數據應用的興趣。<br><br>
+            畢業後，我選擇創業並投入餐飲產業，從選址、行銷、營運到人員管理，親身經歷市場競爭與顧客行為的多變。這段經驗讓我意識到，若能結合 AI 技術與數據分析，就能更有效率地洞察市場與優化決策。<br><br>
+            因此，我開始自學 Python 與 AI 工具，嘗試將過去的商業實務轉化為科技思維。<br>
+            目前正積極轉型至金融與人工智慧結合的領域，期望運用科技創造更具洞察力與社會價值的創新模式。
+        </p>
 
-                </p>
-            </div>
+        <h2>教育背景</h2>
+        <p>國立台北大學｜金融與合作經營學系 學士學位</p>
+        <p>金融創新與AI專班｜專業研修課程</p>
 
-            <!-- 教育背景 -->
-            <div class="section">
-                <h2>教育背景</h2>
-                <div class="education-item">
-                    <h4>國立台北大學</h4>
-                    <p>金融與合作經營學系 學士學位</p>
-                </div>
-            </div>
+        <h2>經驗與技能</h2>
+        <p>• 餐飲創業經驗：品牌定位、行銷策略與營運管理</p>
+        <p>• 文書操作與資料整理</p>
+        <p>• 自學 Python、AI 工具與資料分析基礎</p>
+
+        <div class="contact">
+            📧 聯絡方式：<a href="mailto:shiuejen.p@gmail.com">shiuejen.p@gmail.com</a>
         </div>
     </div>
+
+    <script>
+        // 滾動淡入效果
+        const fadeEls = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        fadeEls.forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
