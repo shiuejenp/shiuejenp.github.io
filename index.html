@@ -54,23 +54,6 @@
             text-align: center;
         }
 
-        .profile-pic {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.8);
-            margin-bottom: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .quote {
-            font-size: 0.95em;
-            font-style: italic;
-            opacity: 0.9;
-            margin-bottom: 30px;
-        }
-
         .sidebar h1 {
             font-size: 2.2em;
             font-weight: 800;
@@ -137,6 +120,16 @@
             border-radius: 2px;
         }
 
+        .about p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--brown-text);
+            background: var(--light-tea);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--milk-tea);
+        }
+
         .education-item, .project-item {
             background: var(--cream);
             padding: 20px;
@@ -171,20 +164,32 @@
     <div class="container">
         <!-- 左側個人資訊 -->
         <div class="sidebar">
-            <img src="images/profile.jpg" alt="潘雪甄照片" class="profile-pic">
-            <div class="quote">「用學習開啟改變，用創新創造未來。」</div>
-
             <h1>潘雪甄</h1>
             <div class="title">軟體工程師</div>
             
             <div class="contact-info">
                 <h3>聯絡方式</h3>
-                <div class="contact-item">shiuejen.p@gmail.com</div>
+                <div class="contact-item">shiuejen.p@@gmail.com</div>
             </div>
         </div>
 
         <!-- 右側主要內容 -->
         <div class="main-content">
+            <!-- 關於我 -->
+            <div class="section about">
+                <h2>關於我</h2>
+                <p>
+                    我是一位對學習與創新充滿熱情的人。
+畢業於 國立台北大學金融合作與經營學系，在學期間不僅培養了金融管理與商業分析的基礎，也透過參與 金融創新與 AI 專班，開啟了我對人工智慧與數據應用的興趣。
+在學期間，我選擇走上一條不同於一般金融人的道路——投入餐飲創業。
+從店面選址、行銷推廣、營運管理到人員培訓，我親身參與了每一個細節。這段經歷讓我深刻體會到市場競爭的真實樣貌，也學會從數據與顧客行為中尋找商機。
+隨著經驗的累積，我開始意識到，如果能結合 AI 技術，就能更精準地分析市場、預測趨勢並優化決策。於是我開始自學各種 AI 工具，嘗試將過去的實務經驗轉化為數據化的思維。
+現在的我，正積極朝向 金融與人工智慧結合的領域 前進，
+希望運用科技與數據，創造更具洞察力的商業模式。
+
+                </p>
+            </div>
+
             <!-- 教育背景 -->
             <div class="section">
                 <h2>教育背景</h2>
