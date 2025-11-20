@@ -195,6 +195,21 @@
             font-size: 1.2em;
             margin-top: 3px;
         }
+        
+        /* 經驗標題樣式 */
+        .job-title {
+            font-size: 1.25em;
+            color: var(--green-dark);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .job-info {
+            font-style: italic;
+            color: var(--gray-text);
+            margin-bottom: 15px;
+            display: block;
+        }
 
 
         /* --- 聯絡資訊 --- */
@@ -268,11 +283,12 @@
     
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"><a href="#top">潘雪甄</a></div>
+            <div class="logo"><a href="#top">潘雪甄 | Portfolio</a></div>
             <div class="nav-links">
                 <a href="#about"><i class="fas fa-user-tie"></i> 關於我</a>
+                <a href="#experience"><i class="fas fa-briefcase"></i> 經驗</a> 
                 <a href="#skills"><i class="fas fa-cogs"></i> 技能</a>
-                <a href="#certs"><i class="fas fa-certificate"></i> 證照</a>
+                <a href="#certs"><i class="fas fa-certificate"></i> 學歷/證照</a>
                 <a href="#projects"><i class="fas fa-folder-open"></i> 專案</a>
                 <a href="#contact"><i class="fas fa-envelope"></i> 聯絡</a>
             </div>
@@ -280,24 +296,44 @@
     </nav>
 
     <div class="profile" id="top">
-        <img src="your-professional-photo.jpg" alt="潘雪甄 大頭照"> 
+        <img src="S_120471559.jpg" alt="潘雪甄 大頭照"> 
         <h1>潘雪甄</h1>
-        <div class="quote">金融 DNA + AI 渦輪引擎：效率就是我的資本利得。。</div>
+        <div class="quote">金融 DNA + AI 渦輪引擎：效率就是我的資本利得。</div>
     </div>
 
     <div class="container">
         <div class="card" id="about">
-            <h2><i class="fas fa-lightbulb"></i> 關於我：</h2>
+            <h2><i class="fas fa-lightbulb"></i> 關於我：創新、效率與實戰</h2>
             <p>
-                我畢業於國立台北大學金融合作與經營學系，具備紮實的財務經營基礎，並積極投入「金融創新與生成式 AI」的學習，掌握運用新興科技優化工作流程的能力。
+                我畢業於國立台北大學金融合作與經營學系，具備紮實的財務經營基礎，並積極投入<strong>「金融創新與生成式 AI」</strong>的學習，掌握運用新興科技優化工作流程的能力。
             </p>
             <p>
-                在學期間，透過實際參與餐飲創業，親自負責行銷、營運與人員管理，培養了極強的市場敏銳度與實戰執行力。
+                我將金融專業知識與高效的文書處理能力結合，專注於利用現代工具<strong>快速產出專業報告與提案</strong>。
             </p>
             <p>
-                我將金融專業知識與高效的文書處理能力結合，專注於利用現代工具快速產出專業報告與提案，期待在貴公司貢獻我的專業知識與創新思維。
+                透過實務經驗培養的<strong>商業洞察力與市場敏銳度</strong>，期待在貴公司貢獻我的專業知識與創新思維。
             </p>
         </div>
+
+        <div class="card" id="experience">
+            <h2><i class="fas fa-briefcase"></i> 實務經驗</h2>
+            
+            <div style="border-bottom: 1px dashed var(--border-color); padding-bottom: 20px; margin-bottom: 20px;">
+                <span class="job-title">餐飲業創業家與營運總監 (個人創業)</span>
+                <span class="job-info">20XX 年 X 月 - 20XX 年 X 月</span>
+                
+                <p style="margin-bottom: 5px;">
+                    • <strong>經營策略與分析：</strong> 獨立完成市場選址、品牌定位及競爭者分析，並負責制定定價策略。
+                </p>
+                <p style="margin-bottom: 5px;">
+                    • <strong>財務與效率管理：</strong> 負責食材成本控制、損益計算，透過數據分析調整採購和庫存，**平均降低 X% 營運成本**。
+                </p>
+                <p>
+                    • <strong>行銷與人員管理：</strong> 執行線上/線下行銷活動，並負責人員招募、訓練與排班，確保營運順暢。
+                </p>
+            </div>
+            
+            </div>
 
         <div class="card" id="skills">
             <h2><i class="fas fa-tools"></i> 核心技能與效率工具</h2>
@@ -317,7 +353,7 @@
         </div>
         
         <div class="card" id="certs">
-            <h2><i class="fas fa-graduation-cap"></i> 證照與教育背景</h2>
+            <h2><i class="fas fa-graduation-cap"></i> 學歷與專業證照</h2>
             
             <p style="font-weight: 700; margin-bottom: 5px;">教育背景：</p>
             <div class="certification-item">
@@ -328,11 +364,11 @@
             <p style="font-weight: 700; margin-top: 15px; margin-bottom: 5px;">專業證照：</p>
             <div class="certification-item">
                 <i class="fas fa-balance-scale"></i>
-                <p><strong>金融市場常識與職業道德</strong>：具備金融從業人員應有的法律與道德素養。</p>
+                <p><strong>金融市場常識與職業道德</strong></p>
             </div>
             <div class="certification-item">
                 <i class="fas fa-keyboard"></i>
-                <p><strong>電腦軟體應用丙級</strong>：具備基礎電腦軟體操作與文書處理能力。</p>
+                <p><strong>電腦軟體應用丙級</strong></p>
             </div>
         </div>
 
@@ -363,8 +399,6 @@
         <div class="card contact" id="contact">
             <p>
                 <i class="fas fa-envelope"></i> Email：<a href="mailto:shiuejen.p@gmail.com">shiuejen.p@gmail.com</a>
-                <span style="margin: 0 20px;">|</span>
-                <i class="fab fa-linkedin"></i> LinkedIn：<a href="https://linkedin.com/in/your_profile" target="_blank">/in/your_profile</a>
                 <span style="margin: 0 20px;">|</span>
                 <i class="fab fa-github"></i> GitHub：<a href="https://github.com/shiuejenp" target="_blank">shiuejenp</a>
             </p>
